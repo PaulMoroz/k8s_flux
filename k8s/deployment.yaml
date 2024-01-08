@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: hello-world-deployment
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: hello-world
@@ -13,7 +13,7 @@ spec:
         app: hello-world
     spec:
       containers:
-      - name: hello-world-container
-        image: public.ecr.aws/z3r2g0a5/hello-world-app:latest
+      - name: nginx-container
+        image: nginx
         ports:
-        - containerPort: 3000
+        - containerPort: 80
